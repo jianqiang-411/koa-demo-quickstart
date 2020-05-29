@@ -10,5 +10,19 @@
     <h2>这是首页</h2>
     <p><%= title %></p>
     <p>作者：<%= author %></p>
+    <br>
+    <br>
+    <div>
+        <form action="/doLogin" method="POST">
+            用户名： <input type="text" name="username">
+            <br>
+            <br>
+            密  码： <input type="password" name="password">
+            <br>
+            <br>
+            <input type="submit" value="提交">
+            <br>
+        </form>
+    </div>
 </body>
 </html>

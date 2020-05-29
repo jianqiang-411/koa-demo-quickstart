@@ -2,6 +2,7 @@ const Koa = require('koa');
 const Router = require('koa-router');
 const views = require('koa-views');
 const sd = require('silly-datetime');
+const bodyParser = require('koa-bodyparser');
 
 
 let app = new Koa();
@@ -9,8 +10,8 @@ let router = new Router();
 
 
 
-
 app.use(views(__dirname + "/views", { extension: 'ejs' }));
+app.use(bodyParser());
 app.use(async (ctx, next) => {
     ctx.state = {
         //引入全局变量，各个ejs模块都可以直接引用
@@ -51,6 +52,17 @@ router.get('/news', async (ctx) => {
         list: list
     });
 })
+
+router.post('/doLogin', async (ctx) => {
+
+    ctx.body = ctx.request.body;
+    
+
+})
+
+
+
+
 
 app.use(router.routes());
 app.use(router.allowedMethods());
