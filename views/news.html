@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <%- include('./public/head') -%>
+    <h2>这是新闻页面</h2>
+    {{@ list.h }}
+
+    {{if list.num > 10 }}
+        <p>{{ list.num }} 大于 10</p>
+    {{else if list.num <= 10}}
+        <p>{{ list.num }} 小于等于 10</p>
+    {{/if}}
+
+    <ul>
+        <!-- <% for(let i = 0; i < list.length; i++) {%>
+        <li><%= list[i] %></li>
+        <%} %> -->
+
+        {{each list.arr }}
+        <li>{{ $index }} ---- {{ $value }}</li>
+        {{/each}}
+    </ul>
+
+</body>
+
+</html>

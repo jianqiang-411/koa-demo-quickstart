@@ -4,12 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="css/index.css">
 </head>
 <body>
-    <%- include('./public/head') -%>
-    <h2>这是首页</h2>
-    <p><%= title %></p>
-    <p>作者：<%= author %></p>
+    <!-- <%- include('./public/head') -%> -->
+    {{include './public/head.html'}}
+    
+    <h2 class="title">这是首页</h2>
+
+    <!-- <p><%= title %></p> -->
+    <p>{{ title }}</p>
+
+    <!-- <p>作者：<%= author %></p> -->
+    <p>作者：{{ author }}</p>
     <br>
     <br>
     <div>
